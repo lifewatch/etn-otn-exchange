@@ -29,6 +29,28 @@ node | OTN-Global | "ETN"
 database | otn | "ETN"
 db_location | db.oceantrack.org | "ETN"
 datacentre | Ocean Tracking Network Data Centre, Halifax Canada / otndc@dal.ca | "ETN"
+contact_pk | otn123 | (unique identifier of contact)
+firstname | John | 
+lastname | Doe | 
+email | john.doe@dal.ca | 
+phone | 123-456-7890 | 
+address | 123 Main Street | 
+affiliation | DAL | 
+ploneid | jdoe | NULL
+website | dal.ca | 
+orcid | 0123-4567-8901 | 
+role | principalInvestigator | 
+is_point_of_contact | True | 
+datelastmodified | 2019-07-12 | current date
+scientificname | Prionace glauca | 
+commonname | blue shark | 
+aphiaid | 105801 | 
+tsn | 160424 | 
+taxonstatus | accepted | 
+authorityaccepted | accepted | 
+aphiaidaccepted | accepted | 
+scientificnameaccpt | accepted | 
+
 
 ## Mapping for ETN's Animals/Tags Geoserver Layer
 The below table shows the columns in OTN's animal/tag table with an example and shows the equivalent column in ETN's animals/tags Geoserver layer.
