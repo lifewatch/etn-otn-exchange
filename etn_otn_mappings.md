@@ -47,9 +47,9 @@ commonname | blue shark |
 aphiaid | 105801 | 
 tsn | 160424 | 
 taxonstatus | accepted | 
-authorityaccepted | accepted | 
-aphiaidaccepted | accepted | 
-scientificnameaccpt | accepted | 
+authorityaccepted | (Linnaeus, 1758) | 
+aphiaidaccepted | 105801 | 
+scientificnameaccpt | Prionace glauca | 
 
 
 ## Mapping for ETN's Animals/Tags Geoserver Layer
