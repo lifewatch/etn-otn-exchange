@@ -1,6 +1,8 @@
 ## Mapping for ETN's Project Geoserver Layer
 The below table shows the columns in OTN's project tables with an example and shows the equivalent column in ETN's project Geoserver layer.
 
+otn_resources:
+
 Column in OTN | Example row in OTN | Equivalent in ETN
 -- | -- | --
 collectioncode | SAMPLE | projectcode
@@ -28,8 +30,15 @@ edate | 2010-05-05  | enddate
 node | OTN-Global | "ETN"
 database | otn | "ETN"
 db_location | db.oceantrack.org | "ETN"
-datacentre | Ocean Tracking Network Data Centre, Halifax Canada / otndc@dal.ca | "ETN"
+datacentre | Ocean Tracking Network Data Centre, Halifax Canada / otndc@dal.ca | "VLIZ"
+
+
+contacts & contacts_projects:
+
+Column in OTN | Example row in OTN | Equivalent in ETN
+-- | -- | --
 contact_pk | otn123 | (unique identifier of contact)
+collectioncode | SAMPLE | projectcode
 firstname | John | 
 lastname | Doe | 
 email | john.doe@dal.ca | 
@@ -41,7 +50,14 @@ website | dal.ca |
 orcid | 0123-4567-8901 | 
 role | principalInvestigator | 
 is_point_of_contact | True | 
-datelastmodified | 2019-07-12 | current date
+startdate | 2008-01-01 | startdate
+enddate | 2010-05-05 | enddate
+
+scientificnames:
+
+Column in OTN | Example row in OTN | Equivalent in ETN
+-- | -- | --
+collectioncode | SAMPLE | projectcode
 scientificname | Prionace glauca | 
 commonname | blue shark | 
 aphiaid | 105801 | 
