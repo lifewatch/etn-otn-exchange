@@ -74,6 +74,7 @@ The below table shows the columns in OTN's animal/tag table with an example and 
 Column   in OTN animal | OTN example row | Equivalent in ETN
 -- | -- | --
 animal_id | Sample | animals.animal_id
+animal_catalognumber | SAMPLE-id | collectioncode-id
 tag_type | Acoustic | tags.type
 tag_manufacturer | VEMCO | tags.project
 tag_model | V9-6L | tags.model
@@ -130,6 +131,7 @@ anaesthetic_concentration_in_recirculation   (ppm) | 50.0 | animals.anesthetic_c
 buffer_concentration_in_recirculation   (ppm) | 100.0 | animals.buffer_concentration_in_recirculation
 dissolved_oxygen (ppm) | 9.4 | animals.dissolved_oxygen
 comments | 146 FL mm; 39.04 WT g; pit tag   not attached; tight fit | animals.comments
+datelastmodified | 2021-11-17 | current_date
 
 ## Mapping for ETN's Stations Geoserver Layer
 The below table shows the columns in OTN's stations table with an example  and shows the equivalent column in ETN's stations Geoserver layer.
@@ -149,6 +151,7 @@ intended_long | -63.58 | stn_long
 depth_m | 123 |  depth_m
 notes | Sample data | null
 stationstatus | active | stationstatus
+datelastmodified | 2021-11-17 | current_date
 
 ## Mapping for ETN's Deployment Geoserver Layer
 The below table shows the columns in OTN's deployment tables with an example and shows the equivalent column in ETN's Deployment Geoserver layer.
@@ -178,3 +181,24 @@ data_downloaded | y |  data_downloaded
 download_date_time | 2019-10-10 12:34:56 | download_date_time
 filename | vr2w_12345_sample.vrl | filename
 comments | Sample data | comments
+catalognumber | SAMPLE-123456-20190101 | 
+datelastmodified | 2021-11-17 | current_date
+
+## Mapping for ETN's Detection Geoserver Layer
+The below table shows the columns in OTN's deployment tables with an example and shows the equivalent column in ETN's Deployment Geoserver layer.
+
+Column   in OTN | Example row in OTN | Column in ETN
+-- | -- | --
+tag_catalognumber | TAG-123 | tag_catalognumber
+receiver_catalognumber | DEPLOY-1234567 | receiver_catalognumber
+collectioncode | 
+datetime | 2021-11-17 12:03:00 | datetime
+receiver | VR2W-12345 | receiver
+transmitter | A69-1303-54321 | transmitter
+transmitter_name | A69-1303-54321 | transmitter_name
+transmitter_serial |7654321 | transmitter_serial
+sensor_value | null | sensor_value
+sensor_unit | null | sensor_unit
+station_name | Stat1 | station_name
+latitude | 12.3456 | latitude
+longitude | 65.4321 | longitude
