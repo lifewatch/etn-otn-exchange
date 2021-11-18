@@ -1,26 +1,36 @@
 The following layers exist in the OTN geoserver:
 1. etn_projects
-    - jb
+    - collectioncode: project code
+    - shortname: project short name
+    - longname: project long name
+    - collaborationtype: project collaborationtype (Tracker (only has animal metadata), Deployment (only has receiver metadata), or Data (has both))
+    - west_boundary: project west boundary
+    - east_boundary: project east boundary
+    - south_boundary: project south boundary
+    - north_boundary: project north boundary
+    - start_date: project start date
+    - end_date: project end date
+    - principalInvestigators: list of principal investigators for project in format `firstname lastname (email)`
 2. etn_stations
     - collectioncode: project code
-	  - seriescode: series code
-	  - ocean: ocean where station is located
-	  - station_name: name of station
-	  - station_type: type of station
-	  - stn_lat: latitude of station
-	  - stn_long: longitude of station
-	  - stationstatus: status of station
-	  - locality: locality of station
-	  - model: model of station
-	  - instrumenttype: type of instrument
-	  - deploy_date: first date of station
-	  - last_download: date station was last downloaded
-	  - last_recovery_date: last date station was recovered from
-	  - is_active_now: if station is active
-	  - downloads: number of downloads
-	  - off_set: offset
-	  - the_geom: geometric representation of location
-	  - depth_m: depth of station
+    - seriescode: series code
+    - ocean: ocean where station is located
+    - station_name: name of station
+    - station_type: type of station
+    - stn_lat: latitude of station
+    - stn_long: longitude of station
+    - stationstatus: status of station
+    - locality: locality of station
+    - model: model of station
+    - instrumenttype: type of instrument
+    - deploy_date: first date of station
+    - last_download: date station was last downloaded
+    - last_recovery_date: last date station was recovered from
+    - is_active_now: if station is active
+    - downloads: number of downloads
+    - off_set: offset
+    - the_geom: geometric representation of location
+    - depth_m: depth of station
 3. etn_animals
     - type: type of transmitter
     - animal_id: identifier of animal
@@ -34,8 +44,9 @@ The following layers exist in the OTN geoserver:
     - activation_date: activation date
     - est_tag_life: estimated tag life
     - tagger: tagger
-    - owner_pi: principal investigator of the owner of tag
-    - owner_organization: organization of the owner of tag
+    - tag_owner_pi: principal investigator of the owner of tag
+    - tag_owner_organization: organization of the owner of tag
+    - tag_manufacturer: manufacturer of tag
     - common_name: common name of animal
     - scientificname: scientific name of animal
     - capture_location: location where animal was captured
@@ -82,17 +93,24 @@ The following layers exist in the OTN geoserver:
 4. etn_deployments
     - receiver: receiver
     - transmitter: transmitter
-    - model: receiver model
+    - ins_model_no: receiver model
+    - ins_serial_no: receiver serial
+    - station_no: station of receiver
     - receiver_status: receiver status
     - ar_model_number: AR model number
     - ar_serial_number: AR serial number
+    - deployed_by: person receiver deployed by
     - projectname: longname of project
     - projectcode: project code
     - projectmember: project member
     - drop_dead_date: date receiver was dropped
-    - download_date: download date
+    - download_date_time: download date
     - deploy_date: date receiver was deployed
+    - deploy_lat: deploy latitude
+    - deploy_long: deploy longitude
     - recover_date: date receiver was recovered
+    - recover_lat: recover latitude
+    - recover_long: recover longitude
     - bottom_depth: bottom depth of receiver
     - riser_length: riser length of receiver
     - instrument_depth: depth of instrument
@@ -102,6 +120,7 @@ The following layers exist in the OTN geoserver:
     - ar_confirm: AR was confirmed
     - filename: file name
     - data_downloaded: data was downloaded
+    - last_download: date receiver was last downloaded
     - recovered: receiver was recovered
     - voltage_at_download: voltage at download
     - time_drift: time drift
