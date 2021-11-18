@@ -32,23 +32,23 @@ The following layers exist in the OTN geoserver:
     - the_geom: geometric representation of location
     - depth_m: depth of station
 3. etn_animals
-    - type: type of transmitter
-    - animal_id: identifier of animal
     - project: project code
-    - model: model of transmitter
-    - serial_number: serial number of transmitter
-    - id_code: id code of tag
+    - animal_id: identifier of animal
+    - tag_type: type of tag
+    - tag_manufacturer: manufacturer of tag
+    - tag_model: model of tag
+    - tag_serial_number: serial number of tag
+    - tag_id_code: id code of tag
     - tag_code_space: code space of tag
-    - implant_type: implant type
-    - implant_method: implant method
-    - activation_date: activation date
+    - tag_implant_type: implant type of tag
+    - tag_implant_method: implant method of tag
+    - tag_activation_date: activation date of tag
     - est_tag_life: estimated tag life
     - tagger: tagger
     - tag_owner_pi: principal investigator of the owner of tag
     - tag_owner_organization: organization of the owner of tag
-    - tag_manufacturer: manufacturer of tag
-    - common_name: common name of animal
-    - scientificname: scientific name of animal
+    - common_name_e: common name of animal
+    - scientific_name: scientific name of animal
     - capture_location: location where animal was captured
     - capture_latitude: latitude where animal was captured
     - capture_longitude: longitude where animal was captured
@@ -91,8 +91,12 @@ The following layers exist in the OTN geoserver:
     - comments: notes about animal
     - catalognumber: unique identifier of animal
 4. etn_deployments
+    - projectcode: project code
+    - projectname: longname of project
+    - projectmember: project member
     - receiver: receiver
     - transmitter: transmitter
+    - tra_model: transmitter model
     - ins_model_no: receiver model
     - ins_serial_no: receiver serial
     - station_no: station of receiver
@@ -100,9 +104,6 @@ The following layers exist in the OTN geoserver:
     - ar_model_number: AR model number
     - ar_serial_number: AR serial number
     - deployed_by: person receiver deployed by
-    - projectname: longname of project
-    - projectcode: project code
-    - projectmember: project member
     - drop_dead_date: date receiver was dropped
     - download_date_time: download date
     - deploy_date: date receiver was deployed
