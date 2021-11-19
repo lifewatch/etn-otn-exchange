@@ -11,6 +11,8 @@ The following layers exist in the OTN geoserver:
     - start_date: project start date
     - end_date: project end date
     - principalInvestigators: list of principal investigators for project in format `firstname lastname (email)`
+    - license
+    - moratorium
 2. etn_stations
     - collectioncode: project code
     - seriescode: series code
