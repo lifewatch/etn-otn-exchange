@@ -27,7 +27,7 @@ The following layers exist in the OTN geoserver:
     - firstname: contact first name
     - lastname: contact last name
     - email: contact email
-    - phonenumber: contact phone number
+    - phone: contact phone number
     - address: contact address
     - affiliation: institution contact belongs to
     - website: contact's website
