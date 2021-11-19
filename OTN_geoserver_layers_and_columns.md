@@ -1,19 +1,46 @@
 The following layers exist in the OTN geoserver:
 1. etn_projects
     - collectioncode: project code
+    - collaborationtype: project collaborationtype (Tracker (only has animal metadata), Deployment (only has receiver metadata), or Data (has both))
     - shortname: project short name
     - longname: project long name
-    - collaborationtype: project collaborationtype (Tracker (only has animal metadata), Deployment (only has receiver metadata), or Data (has both))
+    - citation: project citation
+    - keywords: GCMD keywords
+    - abstract: project abstract
+    - institutioncode: project institution
+    - ocean: project ocean
+    - country: project country
+    - state: project state
+    - local_area: project locality
     - west_boundary: project west boundary
     - east_boundary: project east boundary
     - south_boundary: project south boundary
     - north_boundary: project north boundary
+    - status: project status (proposed, in progress, or complete)
     - start_date: project start date
     - end_date: project end date
+    - website: project website
     - principalInvestigators: list of principal investigators for project in format `firstname lastname (email)`
-    - license
-    - moratorium
-2. etn_stations
+    - license: license
+    - moratorium: moratorium
+2. etn_contacts
+    - collectioncode: project code
+    - firstname: contact first name
+    - lastname: contact last name
+    - email: contact email
+    - phonenumber: contact phone number
+    - address: contact address
+    - affiliation: institution contact belongs to
+    - website: contact's website
+    - orcid: contact ORCID
+    - role: contact's role in project
+    - is_point_of_contact: shows if they are the contact of the project or not
+3. etn_species
+    - collectioncode: project code
+    - scientific name: scientific name
+    - common name: common name
+    - aphiaid: unique identifier of species from WoRMS
+4. etn_stations
     - collectioncode: project code
     - seriescode: series code
     - ocean: ocean where station is located
@@ -33,7 +60,7 @@ The following layers exist in the OTN geoserver:
     - off_set: offset
     - the_geom: geometric representation of location
     - depth_m: depth of station
-3. etn_animals
+5. etn_animals
     - project: project code
     - animal_id: identifier of animal
     - tag_type: type of tag
@@ -92,7 +119,7 @@ The following layers exist in the OTN geoserver:
     - dissolved_oxygen: dissolved oxygen
     - comments: notes about animal
     - catalognumber: unique identifier of animal
-4. etn_deployments
+6. etn_deployments
     - projectcode: project code
     - projectname: longname of project
     - projectmember: project member
@@ -129,7 +156,7 @@ The following layers exist in the OTN geoserver:
     - time_drift: time drift
     - comments: notes about receiver
     - catalognumber: unique identifier for receiver
-5. etn_detections
+7. etn_detections
     - project: project code
     - datetime: datetime of detection
     - receiver: receiver of detection
