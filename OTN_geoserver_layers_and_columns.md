@@ -22,6 +22,7 @@ The following layers exist in the OTN geoserver:
     - website: project website
     - license: license
     - moratorium: moratorium
+    - otn_website: website of OTN project page
 2. etn_contacts
     - collectioncode: project code
     - firstname: contact first name
@@ -127,6 +128,7 @@ The following layers exist in the OTN geoserver:
     - tra_model: transmitter model
     - ins_model_no: receiver model
     - ins_serial_no: receiver serial
+    - manufacturer: manufacturer of receiver
     - station_no: station of receiver
     - receiver_status: receiver status
     - ar_model_number: AR model number
@@ -169,3 +171,7 @@ The following layers exist in the OTN geoserver:
     - longitude: longitude of detection
     - receiver_catalognumber: link to unique identifier of receiver deployment in etn_deployments
     - tag_catalognumber: link to unique identifier of animal in etn_animals, or None if it could not be matched
+8. etn_mysterytags
+    - region: region of mystery detection
+    - datetime: detection date time
+    - fieldnumber: animal fieldnumber (code space and id code)
