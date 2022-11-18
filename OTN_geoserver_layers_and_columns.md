@@ -23,6 +23,7 @@ The following layers exist in the OTN geoserver:
     - license: license
     - moratorium: moratorium
     - otn_website: website of OTN project page
+    - datelastmodified: date record was last modified
 2. etn_contacts
     - collectioncode: project code
     - firstname: contact first name
@@ -35,11 +36,13 @@ The following layers exist in the OTN geoserver:
     - orcid: contact ORCID
     - role: contact's role in project
     - is_point_of_contact: shows if they are the contact of the project or not
+    - datelastmodified: date record was last modified
 3. etn_species
     - collectioncode: project code
     - scientific name: scientific name
     - common name: common name
     - aphiaid: unique identifier of species from WoRMS
+    - datelastmodified: date record was last modified
 4. etn_stations
     - collectioncode: project code
     - seriescode: series code
@@ -60,6 +63,7 @@ The following layers exist in the OTN geoserver:
     - off_set: offset
     - the_geom: geometric representation of location
     - depth_m: depth of station
+    - datelastmodified: date record was last modified
 5. etn_animals
     - project: project code
     - animal_id: identifier of animal
@@ -118,6 +122,7 @@ The following layers exist in the OTN geoserver:
     - buffer_concentration_in_recirculation: buffer concentration in recirculation
     - dissolved_oxygen: dissolved oxygen
     - comments: notes about animal
+    - datelastmodified: date record was last modified
     - catalognumber: unique identifier of animal
 6. etn_deployments
     - projectcode: project code
@@ -156,8 +161,21 @@ The following layers exist in the OTN geoserver:
     - voltage_at_download: voltage at download
     - time_drift: time drift
     - comments: notes about receiver
+    - datelastmodified: date record was last modified
     - catalognumber: unique identifier for receiver
-7. etn_detections
+7. etn_mysterytags
+    - region: region of mystery detection
+    - datetime: detection date time (in format ISO-8601)
+    - fieldnumber: animal fieldnumber (code space and id code)
+    - datelastmodified: date record was last modified
+8. etn_receiver_events
+    - description: description of event
+    - data: data of event
+    - receiver: receiver associated to event
+    - datetime: datetime event occurred
+    - event_type: type of event
+    - datelastmodified: date record was last modified
+10. etn_detections
     - project: project code
     - datetime: datetime of detection
     - receiver: receiver of detection
@@ -169,9 +187,6 @@ The following layers exist in the OTN geoserver:
     - station_name: station name of detection
     - latitude: latitude of detection
     - longitude: longitude of detection
+    - datelastmodified: date record was last modified
     - receiver_catalognumber: link to unique identifier of receiver deployment in etn_deployments
     - tag_catalognumber: link to unique identifier of animal in etn_animals, or None if it could not be matched
-8. etn_mysterytags
-    - region: region of mystery detection
-    - datetime: detection date time
-    - fieldnumber: animal fieldnumber (code space and id code)
