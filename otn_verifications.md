@@ -1,0 +1,262 @@
+OTN verifications for metadata:
+- Project Verification:
+  - project
+    - Check columns are not null
+      - country
+      - state
+      - node
+      - database
+      - db_location
+      - datacentre
+      - seriescode
+      - collaborationtype
+      - sdate
+    - Check columns are not empty strings but should be null
+      - locality
+      - local_area
+      - abstract
+      - shortname
+      - longname
+      - citation
+      - edate
+      - website
+      - usage
+    - Check columns do not have extra spacing
+      - abstract
+      - shortname
+      - longname
+      - ocean
+      - country
+      - state
+      - local_area
+      - locality
+      - status
+      - sdate
+      - edate
+      - website
+      - usage
+      - node
+      - database
+      - db_location
+      - datacentre
+     - Check sdate has format 'yyyy', 'yyyy-mm', or 'yyyy-mm-dd'
+     - Check edate has format 'yyyy', 'yyyy-mm', 'yyyy-mm-dd', 'ongoing', or null
+     - Check for unique collectioncodes
+     - Check collaborationtype is valid
+     - Check columns are uppercase
+       - country
+       - state
+       - ocean
+     - Check centroid of project is in the middle
+     - Check which collectioncodes needs their bounding boxes updated (outer limits of transmitters and receivers)
+     - Check if need to round bounding boxes to 2 decimal places
+     - Check that south bound <= north bound and west bound <= east bound
+     - Check status is correct by checking sdate and edate
+     - Check that node matches nodename in obis.node (a table that holds the name of the node)
+     - Check seriescode is in a list of acceptable series codes
+     - Check ocean is in a list of acceptable oceans (e.g. NW ATLANTIC)
+     - Check if oceans match node with known locations (e.g. FACT project is in Florida)
+       - Check that institutioncode is in institutioncodes table (a table that holds the list of all institutioncodes)
+       - Check if websites start with 'http'
+       - Check if websites are valid
+       - Check if projects do not have contacts
+   - contacts
+     - Check sdate has format 'yyyy', 'yyyy-mm', or 'yyyy-mm-dd'
+     - Check edate has format 'yyyy', 'yyyy-mm', 'yyyy-mm-dd', 'ongoing', or null
+     - Check that contact_pks (unique identifier of contacts) are unique
+     - Check that collectioncode and contact_pk pairs are unique
+     - Check that email is not null
+     - Check where ploneid is null
+     - Check where orcid is null
+     - Check orcid is in right format
+     - Check where affiliation is null
+     - Check where affiliation is not in institutioncodes
+     - Check case of names (for title case)
+     - Check emails do not have extra spacing
+     - Check for duplicates by last name
+     - Check for distinct emails
+     - Check for distinct firstname
+     - Check all contacts are in contacts_projects
+     - Check all contacts_projects are in contacts
+     - Check dates in contacts_projects match otn_resources
+     - Check code in contacts_projects is in otn_resources
+     - Check roles are in list of acceptable roles
+   - institution codes
+     - Check institutioncodes is unique
+     - Check institutionnames are unique
+     - Check for similar institutionnames
+     - Check where institutioncode not in contacts' affiliations or otn_resources
+     - Check where institution website is null
+     - Check for unique institution websites
+     - Check if websites start with 'http'
+     - Check if websites are valid
+     - Check where org_id is null
+     - Check if org_ids are valid
+     - Check where institution country is null
+     - Check where instituion state is null (if 'USA' or 'CANADA')
+     - Check where institution sector is null
+     - Check institution state is part of acceptable states
+     - Check that country is not 'UNITED STATES' or 'UNITED STATES OF AMERICA' (instead of 'USA')
+   - scientific names
+     - Check that scientificname, collectioncode, and commonname combinations are unique
+     - Check that scientificname and collectioncode combinations are unique
+     - Check that collectioncode is in otn_resources
+     - Check columns are not null
+       - common name
+       - scientific name
+     - Check columns are not empty strings but should be null
+       - subgenus
+       - subspecies
+     - Check tsn != '[tsn]'
+     - Check for different common name capitalizations
+     - Check for consistency in scientificnames
+     - Check scientificnames follows WoRMS
+     - Check scientificnames match otn_animals
+- Tag Verification:
+  - Check otn_animals catalognumber is unique
+  - Check otn_transmitters catalognumber is unique
+  - Check basisofrecord is 'HumanObservation' for otn_animals
+  - Check basisofrecord is 'TRANSMITTER' for otn_transmitters
+  - Check animal length > 0
+  - Check animal length2 > 0
+  - Check animal weight > 0
+  - Check animal wild_ind is in a list of valid wild indices
+  - Check animal stationclass is in a list of valid station classes
+  - Check animal stationstatus is in a list of valid station statuses
+  - Check number of animals <= number of tags
+  - Check if all animals have tags (by catalognumber)
+  - Check if all tags have animals (by catalognumber)
+  - Check if all animals have tags (by catalognumber and date)
+  - Check if all tags have animals (by catalognumber and date)
+  - Check date and serial number for tags are in animals
+  - Check for overlapping tags
+  - Check if scientificname is null or commonname is null
+  - Check if length is null and length_type is not, or vice versa
+  - Check if length2 is null and length2_type is not, or vice versa
+  - Check if age is null and ageunit is not, or vice versa
+  - Check animals match scientificnames
+  - Check if fieldnumber is uppercase
+  - Check that fieldnumber is in the right formats
+  - Check that lats are between southbl and northbl values in otn_resources for otn_animals
+  - Check that longs are between eastbl and westbl values in otn_resources for otn_animals
+  - Check that lats are between southbl and northbl values in otn_resources for transmitters
+  - Check that longs are between eastbl and westbl values in otn_resources for transmitters
+  - Check that animal latitudes are between -90 and 90, or on the world
+  - Check that animal longitudes are between -180 and 180, or on the world
+  - Check that transmitter latitudes are between -90 and 90, or on the world
+  - Check that transmitter longitudes are between -180 and 180, or on the world
+  - Check latitude and longitude in otn_animals are numeric
+  - Check latitude and longitude in otn_transmitters are numeric
+  - Check that the_geom (geometric measurement) in otn_animals uses latitude and longitude
+  - Check that the_geom in otn_transmitters uses latitude and longitude
+  - Check otn_animals latitude is not auto-incremented
+  - Check otn_animals longitude is not auto-incremented
+  - Check otn_transmitters latitude is not auto-incremented
+  - Check otn_transmitters longitude is not auto-incremented
+  - Check that datecollected is not in the future for otn_animals
+  - Check that startdatetime is not in the future for transmitters
+  - Check where startdatetime >= enddatetime
+  - Check date parts match datecollected
+  - Check sex is 'U', 'M', 'F', or null
+  - Check that lengthtype is in control/code tables
+  - Check that length2type is in control/code tables
+  - Check that age_units are in control/code tables
+  - Check that lifestage is in control/code tables
+  - Check if models are in instrumentmodels (table of all instrument models)
+  - Check if otn_animals notes is '' or ' ' but should be null
+  - Check if transmitters notes is '' or ' ' but should be null
+  - Check where common name is '' or ' ' or null
+  - Check where scientific name is '' or ' ' or null
+  - Check where lifestage is '' or ' ' but should be null
+  - Check otn_animals notes don't have extra spacing
+  - Check transmitters notes don't have extra spacing
+  - Check common name doesn't have extra spacing
+  - Check scientific name doesn't have extra spacing
+  - Check life stage doesn't have extra spacing
+  - Check that length/weight are in correct units (lengths should be in meters, weight should be in kg)
+  - Check where enddatetime is null
+  - Check where catalognumber != fieldnumber
+  - Check that institution code in otn_animals matches otn_resources
+  - Check that institution code in transmitters matches otn_resources
+  - Check institutioncode, collectioncode, and catalognumber is unique
+  - Cross collection check (check that projects aren't double reporting the same tags/information)
+- Deployment Verification:
+  - Check basisofrecord is in a list of valid basis of records
+  - Check that latitudes are between -90 and 90, or on the world
+  - Check that longitudes are between -180 and 180, or on the world
+  - Check collectioncode is in otn_resources
+  - Check stationclass is in a list of valid station classes
+  - Check stationstatus is in a list of valid station statuses
+  - Check catalognumber is unique
+  - Check that latitudes are between southbl and northbl values in otn_resources
+  - Check that longitudes are between eastbl and westbl values in otn_resources
+  - Check that institution code in moorings matches otn_resources
+  - Check dates are between dates in otn_resources
+  - Check that startdate is not in the future
+  - Check for extra spacing in catalognumber
+  - Check if notes is '' or ' ' but should be null
+  - Check if locality is '' or ' ' but should be null
+  - Check latitude and longitude in moorings are numeric
+  - Check that the_geom uses lat and long
+  - Check moorings latitude is not auto-incremented
+  - Check moorings longitude is not auto-incremented
+  - Stations
+    - Check that stations have dates
+    - Check that station lats, longs, and depths are unique
+    - Check if moorings receivers' station not in moorings stations
+    - Check if moorings stations not in moorings receivers
+    - Check that dates of stations match first occurrence in receivers
+    - Check that receivers have start dates
+  - Receivers
+    - Check that receivers have start dates
+    - Check that deployed < recovered
+    - Check that instrumenttype is not null
+    - Check that model have the right format instead of other variations (e.g. VR2W instead of VR2W69)
+    - Check for overlapping receivers
+    - Check for receivers that are deployed on closed projects
+    - Check receivers that are deployed but their battery died but weren't marked as recovered
+    - Check lost/found values to see if makes sense
+    - Check locality contains correct station
+    - Check receivers are in vendor specs
+    - Check if there are lost receivers with end dates
+  - Transceivers
+    - Check for overlapping transceivers
+    - Check locality contains correct station
+    - Check if transceiver linked receiver does not exist
+    - Check transceiver end dates matches receiver end dates
+    - Check transceiver depths matches receiver depths
+    - Check transceiver locations matches receiver locations
+    - Check if transmitters are in vendor specs
+  - Downloads
+    - Check for duplicate downloads
+    - Check where download_date is before recover_date of receiver
+    - Check linked receiver for download does not exist
+    - Check download depths match receiver depths
+    - Check download locations match receiver locations
+    - Check records in otn_downloads are not in moorings download
+- Detection Verification:
+  - Check date parts match datecollected
+  - Check dates are between otn_resources
+  - Check that basisofrecord = 'MachineObservation'
+  - Check that latitudes are between -90 and 90, or on the world
+  - Check that longitudes are between -180 and 180, or on the world
+  - Check that sensortype is in a list of acceptable sensor types
+  - Check that relationshiptype is in a list of acceptable relationshiptypes
+  - Check combo of institutioncode, collectioncode, and catalognumber is unique
+  - Check detections catalognumber is unique
+  - Check catalognumber does not have extra spacing
+  - Check linked receivers exist
+  - Check detections dates fit receivers dates
+  - Check detections stations fit receivers stations
+  - Check detections depths fit receivers depths
+  - Check detections locations fit receivers locations
+  - Check linked tags exist
+  - Check detections dates fit tags dates
+  - Check detections fieldnumbers match tags fieldnumbers
+  - Check for duplicate detections
+  - Check that trackercodes in otn_resources
+  - Check that trackercode prefix is not current node
+  - Check latitude and longitude in otn_detections_yyyy are numeric
+  - Check that the_geom uses latitude and longitude
+  - Check detection latitude is not auto-incremented
+  - Check detection longitude is not auto-incremented
